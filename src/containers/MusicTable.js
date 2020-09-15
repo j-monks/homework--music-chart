@@ -23,7 +23,6 @@ class MusicTable extends React.Component {
 
      return (
       <div>
-        <h2>MusicTable!</h2>
         <MusicItem />
         <MusicList music={this.state.music} />
       </div>
