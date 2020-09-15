@@ -15,7 +15,7 @@ class MusicTable extends React.Component {
     const url = 'https://itunes.apple.com/gb/rss/topsongs/limit=20/json';
     fetch(url)
       .then(res => res.json())
-      .then(music => this.setState({ music: music }))
+      .then(music => this.setState({ music: music.feed.entry }))
       .catch(err => console.log(err));
   }
 
@@ -25,7 +25,7 @@ class MusicTable extends React.Component {
       <div>
         <h2>MusicTable!</h2>
         <MusicItem />
-        <MusicList />
+        <MusicList music={this.state.music} />
       </div>
     );
   }
